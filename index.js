@@ -1,3 +1,17 @@
+// 
+// Developed by Cory Fishburn
+// https://github.com/CoryFishi/discordServerHostBot
+// 
+// Free to use, and modify.
+// 
+// Proper usage is to run as a node server on the
+// same hardware you are running the minecraft server.
+// It is possible to run this on a seperate server/hardware
+// however you will lose the able to start/stop the server.
+// 
+// See github page to see installation instrustions.
+// 
+
 const {
   Client,
   GatewayIntentBits,
@@ -46,18 +60,19 @@ const connectRCON = async () => {
     await rcon.connect();
     console.log("✅ Connected to RCON!");
     updateBotStatus("Online");
-
+    // on RCON disconect, update connection status
     rcon.on("end", () => {
       console.warn("⚠️ RCON disconnected.");
       rcon = null;
       updateBotStatus("Offline");
     });
-
+    // on RCON connection fail, update connection status
     rcon.on("error", (err) => {
       console.error(`❌ RCON error: ${err.message}`);
       rcon = null;
       updateBotStatus("Offline");
     });
+    // Error handling for RCON connection
   } catch (err) {
     console.error(`❌ Failed to connect to RCON: ${err.message}`);
     rcon = null;
