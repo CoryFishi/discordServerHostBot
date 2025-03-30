@@ -7,17 +7,22 @@ A Discord bot that automates hosting, managing, and interacting with a Minecraft
 
 ## **Installation**
 
-1. Clone the repository:
+
+1. **Install Node.js:**  
+   Make sure you have Node.js installed. Download it from [Node.js Official Site](https://nodejs.org/).  
+   Recommended version: **Node.js 18+**
+
+2. Clone the repository:
 ```bash
 git clone https://github.com/your-repo-name/DiscordServerHostBot.git
 ```
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 ```bash
 cd discorderserverhostbot
 ```
 
-3. Install required dependencies:
+4. Install required dependencies:
 ```bash
 npm install
 ```
@@ -25,6 +30,15 @@ npm install
 ---
 
 ## **Usage**
+
+### **Starting the Bot**
+
+To start the Discord bot, run:
+```bash
+node ./index
+```
+
+Once the bot is running, it will automatically listen for commands on your Discord server.
 
 ### **Bot Commands**
 
